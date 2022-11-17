@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PDVDroidElgin.Splash"
+             Appearing="ContentPage_Appearing"
+             Background="#2b2D53">
+    <ContentPage.Content>
+        <Grid>
+
+            <StackLayout Orientation="Vertical" Padding="200, 50, 200, 200">
+                <Image HeightRequest="100" Margin="100,100,100,100" Aspect="AspectFit"
+                       HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand" Source="elgin.png" />
+                <!--<Image HeightRequest="200" Aspect="AspectFit" HorizontalOptions="Center"  VerticalOptions="Center" Source="sac_branco.png"/>-->
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

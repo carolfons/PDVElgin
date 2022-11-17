@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:PDVDroidElgin.ViewHelpers"
+             xmlns:c="clr-namespace:PDVDroidElgin.CustomControls"
+             x:Class="PDVDroidElgin.ConsultaProdutos"
+             Background="#2b2D53" Appearing="ContentPage_Appearing">
+
+    <ContentPage.Resources>
+        <converters:ImageConverter x:Key="imgConverter" />
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <c:CustomEntry x:Name="txBusca" TextColor="White" PlaceholderColor="White" FontSize="25" TextChanged="txBusca_TextChanged" Placeholder="Pesquisar produtos" />
+
+
+            <ListView CachingStrategy="RecycleElementAndDataTemplate" HasUnevenRows="True" x:Name="listProdutos">
+
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <Grid>
+                                <StackLayout Orientation="Vertical">
+                                    <Grid HeightRequest="115" RowDefinitions="*, 2" ColumnDefinitions="100, *">
+
+                                        <Image Aspect="AspectFit" Margin="10"  
+                                                           Source="{Binding Base64Img, Converter={StaticResource imgConverter}}"/>
+
+                                        <StackLayout Grid.Column="1" Orientation="Vertical">
+                                            <Label FontSize="23" Margin="0,5,0,0" TextColor="White" Text="{Binding Descricao}"/>
+                                            <Label FontSize="20" FontFamily="sans-serif" TextColor="White" Text="{Binding Grupo}"/>
+                                            <Label FontSize="20" FontFamily="sans-serif" FontAttributes="Bold" TextColor="#00e600" Text="{Binding PrecoStr}"/>
+                                        </StackLayout>
+
+                                    </Grid>
+
+                                    <Line Background="whitesmoke" HeightRequest="1" />
+                                </StackLayout>
+                            </Grid>
+
+
+                        </ViewCell>
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

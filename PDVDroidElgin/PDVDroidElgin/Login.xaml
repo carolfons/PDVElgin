@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PDVDroidElgin.Login"
+             xmlns:c="clr-namespace:PDVDroidElgin.CustomControls"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid RowDefinitions="50, *" Background="#2b2D53">
+
+            <Grid Grid.Row="0">
+                <Label TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" Text="Login" />
+            </Grid>
+
+            <Grid ColumnDefinitions="400, *" Grid.Row="1">
+
+                <StackLayout Padding="100, 50, 30, 50" Grid.Column="0">
+                    <Image Margin="0,80,0,0" HorizontalOptions="Center"  VerticalOptions="Center" Source="elgin.png" />
+                    <!--<Image HorizontalOptions="Center"  VerticalOptions="Center" Source="sac_branco.png"/>-->
+                </StackLayout>
+
+                <StackLayout Padding="100, 150, 100, 100" Grid.Column="1">
+                    <Label FontSize="20" Text="Seu login" TextColor="White"/>
+                    <c:CustomEntry Text="Admin" x:Name="txUsuario" FontSize="20" TextColor="White"  VerticalOptions="Center"  />
+
+                    <Label Margin="0,15,0,0" FontSize="20" Text="Sua senha" TextColor="White"/>
+                    <c:CustomEntry Text="1234" x:Name="txSenha" FontSize="20" 
+                           TextColor="White" 
+                           VerticalOptions="Center"
+                           IsPassword="True"/>
+
+                    <Button x:Name="btLogin"
+                            Clicked="btLogin_Clicked"
+                            Margin="0,30,0,0" 
+                            FontSize="18" 
+                            TextColor="White" 
+                            Background="#0044cc" 
+                            VerticalOptions="Center" 
+                            Text="Login"/>
+
+                    <Label x:Name="lbVersao" HorizontalOptions="Center" Text="v 0.0" TextColor="White" FontSize="15" FontAttributes="Bold" />
+                </StackLayout>
+
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

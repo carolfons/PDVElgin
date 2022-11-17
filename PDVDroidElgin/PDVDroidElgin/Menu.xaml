@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PDVDroidElgin.Menu"
+             Background="#2b2D53"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid ColumnDefinitions="350, *">
+            <StackLayout Padding="50, 50, 30, 50" Grid.Column="0">
+                <Image Margin="0,80,0,0" HorizontalOptions="Center"  VerticalOptions="Center" Source="elgin.png" />
+            </StackLayout>
+
+            <Grid Margin="100, 30, 30, 80" Grid.Column="1" RowDefinitions="500" ColumnDefinitions="230*, 220*, 220*">
+                <Grid RowDefinitions="250, 500" Grid.Column="0">
+                    <Grid RowDefinitions="*, 80" BackgroundColor="DeepSkyBlue" Grid.Row="0">
+                        <ImageButton x:Name="btConsultaVendas" Clicked="btConsultaVendas_Clicked"
+                                     Grid.Row="0" Padding="50" BackgroundColor="DeepSkyBlue" Aspect="AspectFit" 
+                                     Source="shopping_cart"/>
+                        <Label  Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Text="Vendas" 
+                                TextColor="White" FontSize="40" />
+                    </Grid>
+
+                    <!--<Grid RowDefinitions="*, 50" BackgroundColor="#4d4dff" Grid.Row="1">
+                        <ImageButton x:Name="btControleCaixa" Clicked="btControleCaixa_Clicked" Aspect="AspectFit" Padding="10" Grid.Row="0" BackgroundColor="#4d4dff"  Source="cash_register"/>
+                        <Label Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Text="Caixa" TextColor="White" FontSize="20" />
+                    </Grid>
+                </Grid>
+
+                <Grid RowDefinitions="130, 130, 130" Grid.Column="1">
+                    <Grid RowDefinitions="*, 50"  BackgroundColor="#4d4dff" Grid.Row="0">
+                        <ImageButton x:Name="btClientes" Clicked="btClientes_Clicked" Aspect="AspectFit" Padding="10" BackgroundColor="#4d4dff"  Source="avatar"/>
+                        <Label Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Text="Clientes" TextColor="White" FontSize="20" />
+                    </Grid>
+
+                    <Grid RowDefinitions="*, 50"  BackgroundColor="#4d4dff" Grid.Row="1">
+                        <ImageButton x:Name="btConsultaProdutos" Clicked="btConsultaProdutos_Clicked" Aspect="AspectFit" Padding="10" BackgroundColor="#4d4dff"  Source="box"/>
+                        <Label Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Text="Produtos" TextColor="White" FontSize="20" />
+                    </Grid>
+
+                    <Grid RowDefinitions="*, 50"  BackgroundColor="#4d4dff" Grid.Row="2">
+                        <ImageButton x:Name="btFormasPag" Clicked="btFormasPag_Clicked" Aspect="AspectFit" Padding="10" BackgroundColor="#4d4dff" Source="credit_card"/>
+                        <Label Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Text="Formas de Pagamento" TextColor="White" FontSize="20" />
+                    </Grid>
+                </Grid>
+
+                <Grid  RowDefinitions="130, 130, 130" Grid.Column="2">
+                    <Grid RowDefinitions="*, 50"  BackgroundColor="#4d4dff" Grid.Row="0">
+                        <ImageButton Aspect="AspectFit" Padding="10" BackgroundColor="#4d4dff"  Source="setting_gears"/>
+                        <Label Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Text="Configurações" TextColor="White" FontSize="20" />
+                    </Grid>
+
+                    <Grid RowDefinitions="*, 50"  BackgroundColor="#4d4dff" Grid.Row="1">
+                        <ImageButton Clicked="ImageButton_Clicked" Aspect="AspectFit" Padding="10" BackgroundColor="#4d4dff"  Source="building"/>
+                        <Label Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Text="Dados da empresa" TextColor="White" FontSize="20" />
+                    </Grid>-->
+
+                    <Grid RowDefinitions="*, 50" BackgroundColor="#4d4dff" Grid.Row="2">
+                        <ImageButton Aspect="AspectFit" Padding="10" BackgroundColor="#4d4dff" Source="door"/>
+                        <Label Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" Text="Sair" TextColor="White" FontSize="20" />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

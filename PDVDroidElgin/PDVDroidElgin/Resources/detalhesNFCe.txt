@@ -1,0 +1,45 @@
+<det nItem="1">
+    <prod>
+        <cProd>1</cProd>
+        <cEAN>SEM GTIN</cEAN>
+        <xProd>@produto</xProd>
+        <NCM>01022911</NCM>
+        <cBenef>1234567890</cBenef>
+        <CFOP>5102</CFOP>
+        <uCom>UN</uCom>
+        <qCom>@quant</qCom>
+        <qTrib>@totalItem</qTrib>
+        <vUnCom>@vUnit</vUnCom>
+        <vProd>@totalItem</vProd>
+        <cEANTrib>SEM GTIN</cEANTrib>
+        <uTrib>UN</uTrib>
+        <vUnTrib>@vUnit</vUnTrib>
+        <indTot>1</indTot>
+    </prod>
+    <imposto>
+        <vTotTrib>0</vTotTrib>
+        <ICMS>
+            <ICMSSN102>
+                <orig>0</orig>
+                <CSOSN>102</CSOSN>
+            </ICMSSN102>
+        </ICMS>
+        <PIS>
+            <PISOutr>
+                <CST>49</CST>
+                <vBC>0.00</vBC>
+                <pPIS>0.0000</pPIS>
+                <vPIS>0.00</vPIS>
+            </PISOutr>
+        </PIS>
+        <COFINS>
+            <COFINSOutr>
+                <CST>49</CST>
+                <vBC>0.00</vBC>
+                <pCOFINS>0.0000</pCOFINS>
+                <vCOFINS>0.00</vCOFINS>
+            </COFINSOutr>
+        </COFINS>
+    </imposto>
+    <infAdProd>TESTE DE COMPLEMENTO A SER IMPRESSO NO CFE, COM PRODUTO COM DESCRICAO DE 120 CARACTERES</infAdProd>
+</det>

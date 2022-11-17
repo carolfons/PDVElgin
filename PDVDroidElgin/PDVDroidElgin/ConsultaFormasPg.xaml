@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Background="#2b2D53"
+             xmlns:ce="clr-namespace:PDVDroidElgin.CustomControls"
+             Appearing="ContentPage_Appearing"
+             x:Class="PDVDroidElgin.ConsultaFormasPg">
+
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Label Text="Formas de Pagamento" TextColor="White" FontSize="20" FontAttributes="Bold"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <ce:CustomEntry TextChanged="txBusca_TextChanged" x:Name="txBusca" TextColor="White" PlaceholderColor="WhiteSmoke" Placeholder="Buscar forma de pagamento" />
+            <ListView  SeparatorColor="White" RowHeight="80"  x:Name="listFormasPg">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Código" TextColor="White" FontSize="10"/>
+                                    <Label Text="{Binding Id}" TextColor="White" FontSize="10"/>
+                                </StackLayout>
+
+                                <Label Text="{Binding Descricao}" TextColor="White" FontSize="15" FontAttributes="Bold"/>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Código SEFAZ" TextColor="White" FontSize="12"/>
+                                    <Label Text="{Binding CodSefaz}" TextColor="White" FontSize="12"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

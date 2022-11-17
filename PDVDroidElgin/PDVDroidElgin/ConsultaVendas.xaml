@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PDVDroidElgin.ConsultaVendas"
+ 
+             Background="#2b2D53"
+             
+            Appearing="ContentPage_Appearing" >
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Label Text="Vendas" TextColor="White" FontSize="20" FontAttributes="Bold"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Novo Atendimento" IconImageSource="plus" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="*, 100">
+            <ListView VerticalOptions="FillAndExpand" Grid.Row="0" ItemTapped="listVendas_ItemTapped" SeparatorColor="White" x:Name="listVendas" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="20" HeightRequest="120" ColumnDefinitions="*, *">
+                                <StackLayout Grid.Column="0">
+                                    <Label 
+                                       Grid.Column="0" 
+                                       Text="{Binding NomeCliente}" 
+                                       TextColor="White"
+                                       FontSize="30"/>
+
+                                    <Label FontAttributes="Bold" FontSize="14" Text="{Binding Status}">
+                                        <Label.Triggers>
+                                            <DataTrigger TargetType="Label" 
+                                                    Binding="{Binding Efetivada}"
+                                                    Value="False">
+                                                <Setter Property="TextColor" Value="OrangeRed"/>
+                                                <Setter Property="Text" Value="Venda em andamento (toque para continuar)"/>
+                                            </DataTrigger>
+
+                                            <DataTrigger TargetType="Label" 
+                                                    Binding="{Binding Efetivada}"
+                                                    Value="True">
+                                                <Setter Property="TextColor" Value="GreenYellow"/>
+                                                <Setter Property="Text" Value="Venda Efetivada (toque para imprimir)"/>
+                                            </DataTrigger>
+                                        </Label.Triggers>
+                                    </Label>
+                                    <Label TextColor="White" FontAttributes="Bold" FontSize="12" Text="{Binding CpfCnpjCliente}" />
+                                    <Label TextColor="White" FontSize="12" Text="{Binding ValorVenda}"  />
+                                    <Label TextColor="White" FontSize="12" Text="{Binding ValorPago}" />
+                                </StackLayout>
+
+                                <StackLayout Grid.Column="1">
+                                    <Label TextColor="White" HorizontalOptions="End" Text="{Binding Numero}" FontSize="18" FontAttributes="Bold"/>
+                                    <Label TextColor="White" HorizontalOptions="End" Text="{Binding DataHora}" FontSize="12" FontAttributes="Bold"/>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Grid Padding="10" HeightRequest="200" Grid.Row="1" ColumnDefinitions="*, 200">
+                <StackLayout VerticalOptions="End" Grid.Column="0">
+                    <RadioButton x:Name="rdoImprimirTexto" IsChecked="True" TextColor="White" FontAttributes="Bold" FontSize="20" Content="Impressão em texto"/>
+                    <RadioButton x:Name="rdoImprimirXml" TextColor="White" FontAttributes="Bold" FontSize="20" Content="Impressão XML NFCe"/>
+                </StackLayout>
+
+                <StackLayout  VerticalOptions="End"  Grid.Column="1">
+                    <Label Text="Total" TextColor="White" FontSize="20"/>
+                    <Label x:Name="lbTotal" Text="R$ 0,00" TextColor="White" FontSize="30" FontAttributes="Bold"/>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

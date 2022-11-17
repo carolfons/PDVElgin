@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
+             xmlns:pdvdroidelgin="clr-namespace:PDVDroidElgin" 
+             x:DataType="pdvdroidelgin:Pagamento"
+              Size="600, 400"
+             xmlns:c="clr-namespace:PDVDroidElgin.CustomControls"
+             x:Class="PDVDroidElgin.Pagamento">
+    <StackLayout Background="#003366">
+        <Grid RowDefinitions="80, 140, 100" Padding="10">
+            
+            <Label HorizontalOptions="Center" Text="Fechamento de Venda" FontSize="25" TextColor="White"/>
+
+            <Grid x:Name="gridForm" Grid.Row="1" RowDefinitions="60, 60" ColumnDefinitions="250, *">
+                <Button Grid.Column="0" Grid.Row="0" Background="#5c8a8a" Text="Total Venda (R$)" FontSize="20" FontAttributes="Bold" TextColor="White" />
+                <c:CustomEntry x:Name="txTotalVenda" IsReadOnly="true" Grid.Column="1" Grid.Row="0" FontSize="30"  FontAttributes="Bold" TextColor="White"/>
+
+                <Button Grid.Column="0" Grid.Row="1" Background="#5c8a8a" Text="Em Dinheiro (R$)" FontSize="20" FontAttributes="Bold" TextColor="White"  />
+
+                <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
+                    <c:CustomEntry x:Name="txValorPagamento" TextChanged="txValorPagamento_TextChanged" HorizontalOptions="FillAndExpand" Keyboard="Numeric"  FontSize="30" FontAttributes="Bold" TextColor="White"/>
+                    <Button x:Name="btCorrige" Clicked="btCorrige_Clicked" FontSize="18" Text="[X]" Background="#e65c00" TextColor="White" FontAttributes="Bold" />
+                </StackLayout>
+            </Grid>
+
+            <StackLayout Grid.Row="2" Orientation="Vertical">
+                <Button x:Name="btCancelar" Clicked="btCancelar_Clicked" Background="#ff3300" FontSize="20" FontAttributes="Bold" TextColor="White" Text="Cancelar" />
+                <Button x:Name="btConfirmar" Clicked="btConfirmar_Clicked" Background="#008040" FontSize="20" FontAttributes="Bold" TextColor="White" Text="Finalizar" />
+            </StackLayout>
+            
+        </Grid>
+    </StackLayout>
+</xct:Popup>
